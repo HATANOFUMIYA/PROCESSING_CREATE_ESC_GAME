@@ -1,0 +1,73 @@
+void Game_Tool(){
+  
+    image(_image.motimono, 0, 0);
+
+
+    if (manager.item_get == true) {
+      image(_image.Tkey, 40, 100);
+      if (18 <= mouseX && mouseX <= 130 && 100 <= mouseY && mouseY <= 165) {
+        image(_image.MS, 0, 400);
+        text("机の下にあったカギだ。", 10, 440);
+        text("タンスのカギと書いてある。タンスを調べてみるか…", 10, 450);
+      }
+    }
+
+    if (_item.esclv[1] == false) {
+      image(_image.Rimokonn, 190, 95);
+      if (160 <= mouseX && mouseX <= 285 &&  100 <= mouseY && mouseY <= 165 ) {
+        image(_image.MS, 0, 400);
+        text("テレビのリモコンだ。なんでタンスに入ってたんだろう？", 10, 440);
+      }
+    }
+
+    if ( manager.remotecontrol == 2) {
+
+      image(_image.Rimokonn, 200, 100);
+      if (170 <= mouseX && mouseX <= 285 &&  100 <= mouseY && mouseY <= 165 ) {
+        image(_image.MS, 0, 400);
+        text("テレビのリモコンだ。なんでタンスに入ってたんだろう？", 10, 440);
+      }
+    }
+
+    if (_item.esclv[2] == false) {
+      image(_image.Dennti, 340, 90);
+      if (330 <= mouseX && mouseX <= 445 &&  100 <= mouseY && mouseY <= 165) {
+        image(_image.MS, 0, 400);
+        text("電池だ。これとリモコンがあればテレビがつくぞ！", 10, 440);
+      }
+    }
+
+    if (manager.num == 1) {
+      image(_image.Driver, 40, 250);
+      if (40 <= mouseX && mouseX <= 140 &&  250 <= mouseY && mouseY <= 300) {
+        image(_image.MS, 0, 400);
+        text("ドライバーだ。ソファーにあった…危ないな。", 10, 440);
+      }
+    }
+
+      if (manager.open == 1) {
+      image(_image.DoorKey, 180, 250);
+      if (170 <= mouseX && mouseX <= 285 &&  250 <= mouseY && mouseY <= 300) {
+        image(_image.MS, 0, 400);
+        text("ドアのカギだ。これで出られる♪", 10, 440);
+      }
+    }
+
+
+
+
+
+
+    if (manager.Scene == 0 && key == 'b') {
+      room = 2;
+    }
+    if (manager.Scene == 1 && key == 'b') {
+      room = 3;
+    }
+    if (manager.Scene == 2 && key == 'b') {
+      room = 4;
+    }
+    if (manager.Scene == 3 && key == 'b') {
+      room = 5;
+    }
+}
