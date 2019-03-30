@@ -1,0 +1,94 @@
+
+void setup() {
+  size (500, 500);
+  _image.Roomimage();
+  _image.Roomimage_Map();
+  _image.Loadimage();
+
+  //MusicLoad
+  minim = new Minim(this);
+  song = minim.loadFile("cancel9.mp3");
+  Title = minim.loadFile("Take-a-Rest.mp3");
+  End = minim.loadFile("Take-a-Rest.mp3");
+}
+
+
+
+void draw() {
+
+  switch(room) {
+
+  case 0:
+
+    Game_Title();
+
+    break;
+
+  case 1:
+
+    Game_Story();
+
+    break;
+
+  case 2:
+
+    Game_Heya1();
+
+    break;
+
+  case 3:
+
+    Game_Heya2();
+
+    break;
+
+  case 4:
+
+    Game_Heya3();
+
+    break;
+
+  case 5:
+
+    Game_Heya4();
+
+    break;
+
+  case 6:
+
+    Game_Bad_Ending_1();
+
+    break;
+
+  case 7:
+
+    Game_Bad_Ending_2();
+
+    break;
+
+  case 8:
+  
+    Game_Mystery();
+
+    break;
+
+  case 9:
+
+  Game_Description();
+  
+    break;
+
+  case 10:
+  
+  Game_Tool();
+  
+    break;
+
+  case 11:
+  
+  Game_Happy_Ending();
+
+    break;
+  }
+ 
+}
