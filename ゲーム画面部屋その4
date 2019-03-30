@@ -1,0 +1,52 @@
+void Game_Heya4(){
+   manager.Scene = 3;
+
+    image(_image.heya3, 0, 0 );
+
+    image(_image.illustration, 100, 100);
+    //部屋移動の画像の描画
+    image(_image.heya_1, 0, 0);
+    image(_image.heya_2, 450, 0);
+    image(_image.heya_3, 0, 450);
+    image(_image.heya_4, 450, 450);
+    //壁絵の当たり判定
+    if (100 <= mouseX && mouseX <= 170 && 100 <= mouseY && mouseY <= 150 && mouseButton == LEFT) {
+      image(_image.MS, 0, 400);
+      text("絵が飾ってある。きれいな絵だな。", 10, 440);
+      text("よく見るとドライバーで固定されている。", 10, 450);
+      if (manager.num == 1) {
+        room = 8;
+      }
+    }
+    //壁絵の当たり判定
+    if (280 <= mouseX && mouseX <= 485 && 80 <= mouseY && mouseY <= 150 && mouseButton == LEFT) {
+      image(_image.MS, 0, 400);
+      text("なにこれ…？どういうことだろう", 10, 440);
+    }
+
+
+    fill(255);
+    text ("pボタンを押してみよう♪", 320, 120);
+    if (key == 'p') {
+      room = 6;
+    }
+
+    //見取り図との当たり判定
+    if (mouseButton == RIGHT) {
+      if (0 <= mouseX && mouseX <= 50 && 0 <= mouseY && mouseY <= 50) {
+        room = 2;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 50) {
+        room = 3;
+      }
+      if (0 <= mouseX && mouseX <= 50 && 450 <= mouseY && mouseY <= 500) {
+        room = 4;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 450 <= mouseY && mouseY <= 500) {
+        room = 5;
+      }
+    }
+
+
+  
+}
