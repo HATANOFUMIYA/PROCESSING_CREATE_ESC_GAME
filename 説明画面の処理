@@ -1,0 +1,7 @@
+void Game_Description() {
+  if (key == 'b') {
+    room = 0;
+  }
+
+  image(_image.setumei, 0, 0);
+}
