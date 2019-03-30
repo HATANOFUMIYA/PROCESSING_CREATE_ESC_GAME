@@ -1,0 +1,115 @@
+class Image {
+  //各シーン画像集
+  PImage heya;
+  PImage heya1;
+  PImage heya2;
+  PImage heya3;
+
+  //各シーン画像集ロード
+  void Roomimage() {
+    heya  = loadImage("clock_0800.png");
+    heya1 = loadImage("room2.png");
+    heya2 = loadImage("room3.png");
+    heya3 = loadImage("room4.png");
+  }
+
+  //各部屋移動のフィールド
+  PImage heya_1;
+  PImage heya_2;
+  PImage heya_3;
+  PImage heya_4;
+  PImage motimono;
+  PImage setumei;
+
+
+
+  //各部屋移動のロード
+  void Roomimage_Map() {
+    heya_1 = loadImage("見取り図1.png");
+    heya_2 = loadImage("見取り図2.png");
+    heya_3 = loadImage("見取り図3.png");
+    heya_4 = loadImage("見取り図4.png");
+    motimono = loadImage("持ち物画面.png"); 
+    setumei = loadImage("説明画面.png");
+  }
+  //謎解き№画像集フィールド
+  PImage no0;
+  PImage no1;
+  PImage no2;
+  PImage no3;
+  PImage no4;
+  PImage no5;
+  PImage no6;
+  PImage no7;
+  PImage no8;
+  PImage no9;
+
+  //リセットボタン
+  PImage reset;
+  //バックボタン
+  PImage back;
+  //カギの画像
+  PImage Tans_Key ;
+  //カギを取った後
+  PImage Tans_No_Key;
+  //パイルドライバー画像
+  PImage pile;
+
+  //部屋の置物等、画像変数
+  //壁掛けの絵
+  PImage illustration;
+  //ネコの置物
+  PImage cat;
+
+  //メッセージウィンドウ画像
+  PImage MS;
+
+  //タイトル画面カーソル画像
+  PImage img; 
+  
+  //持ち物画面の画像集
+  PImage Tkey;
+  PImage Rimokonn;
+  PImage Dennti;
+  PImage Driver;
+  PImage DoorKey;
+  
+  //謎解き№画像集ロード
+  void Loadimage() {
+    no0 = loadImage("number_0.png");
+    no1 = loadImage("number_1.png");
+    no2 = loadImage("number_2.png");
+    no3 = loadImage("number_3.png");
+    no4 = loadImage("number_4.png");
+    no5 = loadImage("number_5.png");
+    no6 = loadImage("number_6.png");
+    no7 = loadImage("number_7.png");
+    no8 = loadImage("number_8.png");
+    no9 = loadImage("number_9.png");
+    reset = loadImage("reset.png");
+    back = loadImage("back.png");
+
+    Tans_Key = loadImage("gold-key-md.png");
+    Tans_No_Key = loadImage("NoKey.png");
+
+    pile = loadImage("piledriver.png");
+
+    img = loadImage("finger.png");
+    cat = loadImage("ネコの置物.png");
+
+
+    illustration = loadImage("額縁.png");
+    MS = loadImage("メッセージフレーム.png");
+    
+    Tkey = loadImage("カギ(持ち物).png");
+    
+    Rimokonn = loadImage("リモコン(持ち物).png");
+    
+    Dennti = loadImage("電池(持ち物).png");
+    
+    Driver = loadImage("ドライバー(持ち物).png");
+    
+    DoorKey = loadImage("ドアの鍵.png");
+  }
+} 
+Image _image = new Image();
