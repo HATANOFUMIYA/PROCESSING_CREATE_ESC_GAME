@@ -1,0 +1,161 @@
+void Game_Heya3(){
+  
+    manager.Scene = 2;
+
+    image(_image.heya2, 0, 0 );
+    //部屋移動の画像の描画
+    image(_image.heya_1, 0, 0);
+    image(_image.heya_2, 450, 0);
+    image(_image.heya_3, 0, 450);
+    image(_image.heya_4, 450, 450);
+
+    //クリックしたときの処理
+    if (mouseButton == LEFT) {
+      //TVとの当たり判定
+      if (120 <= mouseX && mouseX <= 180 && 100 <= mouseY && mouseY <= 140) {
+        image(_image.MS, 0, 400);
+        text("テレビだ…何も映ってない", 10, 440);
+        //先に電池を手に入れてリモコンを持っていないときの処理
+        if (manager.remotecontrol == 1 ) {
+          image(_image.MS, 0, 400);
+          text("リモコンがない…( ;∀;)", 10, 440);
+        }
+        //先にリモコンを手に入れて電池を持っていないときの処理
+        if (manager.havebattery == true) {
+          image(_image.MS, 0, 400);
+          text("リモコンに電池が入ってないやん…( ;∀;)", 10, 440);
+        }
+        //リモコンと電池を持っている状態の処理
+        if (manager.remotecontrol == 2) {
+          image(_image.MS, 0, 400);
+          text("テレビが映った！何だこれ？", 10, 440);
+          text("4 + 3 = 17 , 7 + 2 = 59 , 6 + 1 = 57 . 9 + 4 = 513 ", 10, 460);
+          text("では 9 + 1 = ???", 10, 480);
+        }
+        if ( manager.havebattery == true && manager.tans_remote ==true) {
+          image(_image.MS, 0, 400);
+          text("テレビが映った！何だこれ？", 10, 440);
+          text("4 + 3 = 17 , 7 + 2 = 59 , 6 + 4 = 210 . 9 + 4 = 513 ", 10, 460);
+          text("では 9 + 1 = ???", 10, 480);
+        }
+      }
+    }
+
+    //タンスとの当たり判定
+    if (370 <= mouseX && mouseX <= 470 && 60 <= mouseY && mouseY <= 170) {
+      if (mouseButton == LEFT && _item.esclv[1] == true) {
+        image(_image.MS, 0, 400);
+        text("開かない…なんでカギついてるの？", 10, 440);
+        //カギを持っている状態でタンスをクリック
+        if (manager.item_get == true) {
+          image(_image.MS, 0, 400);
+          text("カギを使った！ リモコンがある. 右クリックで取る", 10, 440);
+        }
+      }
+      if (mouseButton == RIGHT && manager.item_get == true) {
+        _item.esclv[1] = false;
+        image(_image.MS, 0, 400);
+        text("リモコンがあったタンスだ。なんで入ってたんだろう？", 10, 440);
+        //電池を持っている状態でタンスをあけた場合の処理
+        if (manager.remotecontrol == 1) {
+          manager.remotecontrol = 2;
+        }//電池を持っていない状態でタンスをあけた場合の処理
+        if (manager.tans_remote == false) {
+          image(_image.MS, 0, 400);
+          text("リモコンがあったタンスだ。なんで入ってたんだろう？", 10, 440);
+          manager.havebattery = true;
+        }
+      }
+    }
+
+
+
+    //テレビの棚の当たり判定
+    if (80 <= mouseX && mouseX <= 100 && 150 <= mouseY && mouseY <= 160 ) {
+      if (mouseButton == LEFT && _item.esclv[2] == true) {
+        image(_image.MS, 0, 400);
+        text("電池があった！取りますか？ 右クリックで取る。", 10, 440);
+      }
+      //電池を取る処理
+      if (mouseButton == RIGHT) {
+        _item.esclv[2] = false;
+        image(_image.MS, 0, 400);
+        text("電池を取った！もう何もない", 10, 440);
+        //タンスをまだあけていない状態で電池を手に入れる処理
+        if (manager.remotecontrol == 0) {
+          //電池を手に入れる
+          manager.remotecontrol = 1;
+        }
+        //タンスを開けてから電池を手に入れる処理
+        if (manager.havebattery == true) {
+          //電池を手に入れる
+          manager.tans_remote = true;
+        }
+      }
+    }
+
+    //座布団左の当たり判定
+    if (120 <= mouseX && mouseX <= 200 && 337 <= mouseY && mouseY <= 378 && mouseButton == LEFT) {
+      image(_image.MS, 0, 400);
+      text("座布団だ。下には何もない…", 10, 440);
+    }
+
+    //座布団右の当たり判定
+    if (330 <= mouseX && mouseX <= 390 && 324 <= mouseY && mouseY <= 380 && mouseButton == LEFT) {
+      image(_image.MS, 0, 400);
+      text("この下には今日放送されるアニメの本だ…大人向けのね♥", 10, 440);
+    }
+
+    //ちゃぶ台の当たり判定
+    if (210 <= mouseX && mouseX <= 300 && 260 <= mouseY && mouseY <= 300 && mouseButton == LEFT) {
+      image(_image.MS, 0, 400);
+      text("ここで録画したアニメを見てる。今日も必ず見よう", 10, 440);
+    }
+
+    //宝箱の当たり判定
+    if (350 <= mouseX && mouseX <= 365 && 145 <= mouseY && mouseY <= 160) {
+      if (mouseButton == LEFT) {
+        if (manager.correct == 0) {
+          image(_image.MS, 0, 400);
+          text("開かない…何が入ってるんだろう。", 10, 440);
+          text("無理やり開けてみようかな。ENTERで無理やり開ける", 10, 460);
+        }
+        if (key == ENTER ) {
+          room = 7;
+        }
+        //if (manager.correct == 1 && manager.open == 0) {
+          if (manager.correct == 1 && manager.open == 0) {
+          image(_image.MS, 0, 400);
+          text("扉の鍵だ！取りますか？ 右クリックで取る", 10, 440);
+        }
+      }
+      if (mouseButton == RIGHT && manager.correct == 1) {
+        image(_image.MS, 0, 400);
+        text("これで出られる♪", 10, 440);
+        //manager.open = 1;
+        manager.open = 1;
+      }
+    }
+    //見取り図との当たり判定
+    if (mouseButton == RIGHT) {
+      if (0 <= mouseX && mouseX <= 50 && 0 <= mouseY && mouseY <= 50) {
+        room = 2;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 50) {
+        room = 3;
+      }
+      if (0 <= mouseX && mouseX <= 50 && 450 <= mouseY && mouseY <= 500) {
+        room = 4;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 450 <= mouseY && mouseY <= 500) {
+        room = 5;
+      }
+    }
+
+    if (key == 'm') {
+      room = 10;
+    }
+
+
+  
+}
