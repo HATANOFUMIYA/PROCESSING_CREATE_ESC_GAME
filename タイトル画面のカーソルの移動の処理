@@ -1,0 +1,26 @@
+//上下左右のキーが押されたときの処理
+void keyPressed() {
+  if (key == CODED) {   
+    if (keyCode == DOWN) {       //↓Key de ka-soru no idou   
+      manager.y += 30;
+      song.rewind();
+    } else if (keyCode == UP) {  //↑Key de ka-soru no idou  
+      manager.y -= 30;
+      song.rewind();
+    }
+    if (manager.y == 325) {//ゲーム開始で↓を押すと一番↑になる。
+      manager.y = 265;
+      song.play();
+    }
+    if (manager.y == 235) {//ゲーム開始で↑を押すと一番下になる。
+      manager.y = 295;
+      song.play();
+    }
+  }
+}
+
+void stop(){
+  song.close();//Sound Stop
+  minim.stop();
+  super.stop(); 
+}
