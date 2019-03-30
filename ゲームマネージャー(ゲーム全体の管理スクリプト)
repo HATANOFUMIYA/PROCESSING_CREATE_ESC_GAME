@@ -1,0 +1,132 @@
+import ddf.minim.*;
+Minim minim;
+AudioPlayer song;
+AudioPlayer Title;
+AudioOutput out;
+AudioPlayer End;
+
+int room;
+
+
+
+//2回目に数字を入力すると,1回目に入力した数字が2回目に入力した数字と同じになってしまうため、それを防ぐための変数宣言
+int aaa, bbb, ccc, ddd, eee, fff, ggg, hhh, iii, jjj, kkk, lll, mmm;
+
+int ddd2, eee2, fff2, ggg2, hhh2, iii2, jjj2, kkk2, lll2, mmm2;
+
+int ddd3, eee3, fff3, ggg3, hhh3, iii3, jjj3, kkk3, lll3, mmm3;
+
+
+
+class GameManager {
+
+  //カーソル画像の座標
+  int y;
+
+  //机の下のアイテムをまだ持っていない状態
+  boolean item_get;
+
+
+  //電池がある状態でリモコンを手に入れる
+  int remotecontrol;
+  int remotecontrollv;
+
+  //電池がない状態でリモコンを手に入れる
+  boolean tans_remote;
+  boolean havebattery;
+
+  //謎解き画面変数
+  int mystery;
+
+  //謎解きをクリアすると1になる
+  int correct;
+
+  //
+  int num;
+
+  //ドアを開けるための変数
+ int open;
+
+
+  boolean clear1;
+  boolean clear2;
+  boolean clear3;
+  
+  
+  int Scene;
+  
+  int tsize;
+
+  PFont font;
+
+  //エンディング文字移動変数
+  float MS1;
+  float MS2;
+  float MS3;
+  float MS4;
+  float MS5;
+  float MS6;
+  float MS7;
+  float MS8;
+  float MS9;
+  float MS10;
+  float MS11;
+  float MS12;
+  float MS13;
+  float MS14;
+  float MS15;
+  float MS16;
+
+  //コンストラクター
+  GameManager() {
+
+    y = 265;
+
+    item_get = false;
+
+    //電池がある状態でリモコンを手に入れる
+    remotecontrol = 0;
+    remotecontrollv = 0;
+
+    //電池がない状態でリモコンを手に入れる
+    tans_remote = false;
+    havebattery = false;
+
+    mystery = 3;
+
+    correct = 0;
+
+    num = 0;
+
+    open = 0;
+
+    Scene = 0;
+
+    clear1 = false;
+    clear2 = false;
+    clear3 = false;
+    
+    tsize = 15;
+
+
+
+    //エンディング文字移動変数
+    MS1 = 510;
+    MS2 = 550;
+    MS3 = 590;
+    MS4 = 630;
+    MS5 = 670;
+    MS6 = 710;
+    MS7 = 750;
+    MS8 = 790;
+    MS9 = 830;
+    MS10 = 870;
+    MS11 = 910;
+    MS12 = 950;
+    MS13= 990;
+    MS14 = 1030;
+    MS15 = 1070;
+    MS16 = 1090;
+  }
+}
+GameManager manager = new GameManager();
