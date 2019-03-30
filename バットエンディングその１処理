@@ -1,0 +1,95 @@
+void Game_Bad_Ending_1(){
+
+    background(255, 0, 0);
+    fill(0);
+    text("突然レスラーが降ってきてあなたは死にました…( ﾟдﾟ)", 10, 100);
+    fill(0, 0, 0);
+    text("決め技[パイルドライバー]", 10, 150);
+    fill(255);
+    text("Tボタンでタイトルに戻ります", 10, 300);
+
+    if (keyPressed) {
+      if (key == 't') {
+        room = 0;
+
+        //リモコンを持っていない状態
+        manager.remotecontrol = 0;
+        manager.remotecontrollv = 0;
+        //電池もなく、タンスの鍵もない状態
+        manager.tans_remote = false;
+        manager.havebattery = false;
+        //タンスのカギを持っていない状態
+        manager.item_get = false;
+
+        //リモコンを持っていない状態
+        _item.esclv[1] = true;
+
+        _item.esclv[2] = true;
+
+        //ドライバーを手に入れていない状態
+        _item.esclv[0] = true;
+        //絵のねじを外せない状態
+        manager.num = 0;
+
+        //正解番号を入力する前の状態
+        manager.clear1 = false;
+        manager.clear2 = false;
+        manager.clear3 = false;
+        //ドアのカギを手に入れてない状態
+        //manager.open = 0;
+        manager.open = 0;
+        //謎解き前の状態
+        manager.mystery = 3;
+
+        //番号入力前の状態
+        _enter.no[0] = true;
+        _enter.no[1] = true;
+        _enter.no[2] = true;
+        _enter.no[3] = true;
+        _enter.no[4] = true;
+        _enter.no[5] = true;
+        _enter.no[6] = true;
+        _enter.no[7] = true;
+        _enter.no[8] = true;
+        _enter.no[9] = true;
+        //1回目の番号を入力する前の状態
+        aaa = 0;
+        bbb = 0;
+        ccc = 0;
+        ddd = 0;
+        eee = 0;
+        fff = 0;
+        ggg = 0;
+        hhh = 0;
+        iii = 0;
+        jjj = 0;
+        kkk = 0;
+        lll = 0;
+        mmm = 0;
+
+        //2回目の番号を入力する前の状態
+        ddd2 = 0;
+        eee2 = 0;
+        fff2 = 0;
+        ggg2 = 0;
+        hhh2 = 0;
+        iii2 = 0;
+        jjj2 = 0;
+        kkk2 = 0;
+        lll2 = 0;
+        mmm2 = 0;
+
+        //3回目の番号を入力する前の状態
+        ddd3 = 0;
+        eee3 = 0;
+        fff3 = 0;
+        ggg3 = 0;
+        hhh3 = 0;
+        iii3 = 0;
+        jjj3 = 0;
+        kkk3 = 0;
+        lll3 = 0;
+        mmm3 = 0;
+      }
+    }
+}
