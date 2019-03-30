@@ -1,0 +1,539 @@
+void Game_Mystery(){
+  //謎解き番号入力画面
+    background(0);
+
+
+    for (int i = 0; i < 5; i++) {
+      for (int j = 0; j < 2; j++) {
+        rect(i *100, j *100, 100, 100);
+      }
+    }
+    //画像の描画
+    image(_image.no0, 25, 25);
+    image(_image.no1, 125, 25);
+    image(_image.no2, 225, 25);
+    image(_image.no3, 325, 25);
+    image(_image.no4, 425, 25);
+    image(_image.no5, 25, 125);
+    image(_image.no6, 125, 125);
+    image(_image.no7, 225, 125);
+    image(_image.no8, 325, 125);
+    image(_image.no9, 425, 125);
+    //リセット画像
+    image(_image.reset, 300, 350);
+    //バック画像
+    image(_image.back, 370, 350);
+    text("数字を3つ入力しよう！", 10, 350);
+    text(mouseButton, 10, 450);
+
+
+
+    //番号入力のための処理(何か1つの番号の所で右クリックしたら画面に描画)
+    //0をクリック
+    if (manager.mystery == 3) {
+      if (0 <= mouseX && mouseX <= 100 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[0] == true) {
+        manager.mystery = 2;
+        _enter.no[0] = false;
+        ddd = 1;
+      }
+      //1をクリック
+      if (101 <= mouseX && mouseX <= 200 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[1] == true) {
+        manager.mystery = 2;
+        _enter.no[1] = false;
+        eee = 1;
+      }
+      //2をクリック
+      if (201 <= mouseX && mouseX <= 300 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[2] == true) {
+        manager.mystery = 2;
+        _enter.no[2] = false;
+        fff = 1;
+      }
+      //3をクリック
+      if (301 <= mouseX && mouseX <= 400 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[3] == true) {
+        manager.mystery = 2;
+        _enter.no[3] = false;
+        ggg = 1;
+      }
+      //4をクリック
+      if (401 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[4] == true) {
+        manager.mystery = 2;
+        _enter.no[4] = false;
+        hhh = 1;
+      }
+      //5をクリック
+      if (0 <= mouseX && mouseX <= 100 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[5] == true) {
+        manager.mystery = 2;
+        _enter.no[5] = false;
+        iii = 1;
+      }  
+      //6をクリック
+      if (101 <= mouseX && mouseX <= 200 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[6] == true) {
+        manager.mystery = 2;
+        _enter.no[6] = false;
+        jjj = 1;
+      }  
+      //7をクリック
+      if (201 <= mouseX && mouseX <= 300 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[7] == true) {
+        manager.mystery = 2;
+        _enter.no[7] = false;
+        kkk = 1;
+      }  
+      //8をクリック
+      if (301 <= mouseX && mouseX <= 400 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[8] == true) {
+        manager.mystery = 2;
+        manager.clear1 = true;
+        _enter.no[8] = false;
+        lll = 1;
+      }  
+      //9をクリック
+      if (401 <= mouseX && mouseX <= 500 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[9] == true) {
+        manager.mystery = 2;
+        _enter.no[9] = false;
+        mmm = 1;
+      }
+    }
+
+
+    //入力した文字を表示(1回目)！
+    //0を入力
+    if (_enter.no[0] == false && ddd == 1) {
+      aaa = 1;
+      if (aaa == 1) {
+        image(_image.no0, 25, 225);
+      }
+    }
+    //1を入力
+    if (_enter.no[1] == false  && eee == 1) {
+      aaa = 1;
+      if (aaa == 1) {
+        image(_image.no1, 25, 225);
+      }
+    } 
+    //入力した文字を表示！
+    //2を入力
+    if (_enter.no[2] == false  && fff == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no2, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //3を入力
+    if (_enter.no[3] == false && ggg == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no3, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //4を入力
+    if (_enter.no[4] == false  && hhh == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no4, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //5を入力
+    if (_enter.no[5] == false  && iii == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no5, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //6を入力
+    if (_enter.no[6] == false  && jjj == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no6, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //7を入力
+    if (_enter.no[7] == false  && kkk == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no7, 25, 225);
+      }
+    }  //入力した文字を表示！
+    //8を入力
+    if (_enter.no[8] == false  && lll == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no8, 25, 225);
+      }
+    }
+    //入力した文字を表示！
+    //9を入力
+    if (_enter.no[9] == false  && mmm == 1) {
+      aaa = 1;  
+      if (aaa == 1) {
+        image(_image.no9, 25, 225);
+      }
+    }
+
+
+    //2回目の入力
+    if (manager.mystery == 2) {
+      //0をクリック
+      if (0 <= mouseX && mouseX <= 100 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[0] == true) {
+        manager.mystery = 1;
+        _enter.no[0] = false;
+        ddd2 = 1;
+      }
+      //1をクリック
+      if (101 <= mouseX && mouseX <= 200 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[1] == true) {
+        manager.mystery = 1;
+        eee2 = 1;
+        manager.clear2 = true;
+        _enter.no[1] = false;
+      }
+      //2をクリック
+      if (201 <= mouseX && mouseX <= 300 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[2] == true) {
+        manager.mystery = 1;
+        fff2 = 1;
+        _enter.no[2] = false;
+      }
+      //3をクリック
+      if (301 <= mouseX && mouseX <= 400 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[3] == true) {
+        manager.mystery = 1;
+        _enter.no[3] = false;
+        ggg2 = 1;
+      }
+      //4をクリック
+      if (401 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 100 &&mouseButton == RIGHT && _enter.no[4] == true) {
+        manager.mystery = 1;
+        _enter.no[4] = false;
+        hhh2 = 1;
+      }
+      //5をクリック
+      if (0 <= mouseX && mouseX <= 100 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[5] == true) {
+        manager.mystery = 1;
+        _enter.no[5] = false;
+        iii2 = 1;
+      }  
+      //6をクリック
+      if (101 <= mouseX && mouseX <= 200 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[6] == true) {
+        manager.mystery = 1;
+        _enter.no[6] = false;
+        jjj2 = 1;
+      }  
+      //7をクリック
+      if (201 <= mouseX && mouseX <= 300 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[7] == true) {
+        manager.mystery = 1;
+        _enter.no[7] = false;
+        kkk2 = 1;
+      }  
+      //8をクリック
+      if (301 <= mouseX && mouseX <= 400 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[8] == true) {
+        manager.mystery = 1;
+        _enter.no[8] = false;
+        lll2 = 1;
+      }  
+      //9をクリック
+      if (401 <= mouseX && mouseX <= 500 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[9] == true) {
+        manager.mystery = 1;
+        _enter.no[9] = false;
+        mmm2 = 1;
+      }
+    }
+    /*
+  if(_enter.no[1] == false && mystery == 1){
+     bbb = 1;  
+     if(bbb == 1){
+     image(_image.no1,125,225);
+     }
+     }
+     */
+
+    //二回目の入力
+    if (_enter.no[0] == false && ddd2 == 1 ) {
+      bbb = 1;
+      if (bbb == 1) {
+        image(_image.no0, 125, 225);
+      }
+    }
+
+    //1を入力
+    if (_enter.no[1] == false  && eee2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no1, 125, 225);
+      }
+    } 
+    //入力した文字を表示！
+    //2を入力
+    if (_enter.no[2] == false  && fff2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no2, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //3を入力
+    if (_enter.no[3] == false && ggg2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no3, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //4を入力
+    if (_enter.no[4] == false  && hhh2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no4, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //5を入力
+    if (_enter.no[5] == false  && iii2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no5, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //6を入力
+    if (_enter.no[6] == false  && jjj2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no6, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //7を入力
+    if (_enter.no[7] == false  && kkk2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no7, 125, 225);
+      }
+    }  //入力した文字を表示！
+    //8を入力
+    if (_enter.no[8] == false  && lll2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no8, 125, 225);
+      }
+    }
+    //入力した文字を表示！
+    //9を入力
+    if (_enter.no[9] == false  && mmm2 == 1) {
+      bbb = 1;  
+      if (bbb == 1) {
+        image(_image.no9, 125, 225);
+      }
+    }
+
+    //3回目の入力
+    if (manager.mystery == 1 ) {
+      //0をクリック
+      if (0 <= mouseX && mouseX <= 100 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[0] == true) {
+        manager. mystery = 0;
+        manager.clear3 = true;
+        _enter.no[0] = false;
+        ddd3 = 1;
+      }
+      //1をクリック
+      if (101 <= mouseX && mouseX <= 200 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[1] == true) {
+        manager.mystery = 0;
+        _enter.no[1] = false;
+        eee3 = 1;
+      }
+      //2をクリック
+      if (201 <= mouseX && mouseX <= 300 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[2] == true) {
+        manager.mystery = 0;
+        _enter.no[2] = false;
+        fff3 = 1;
+      }
+      //3をクリック
+      if (301 <= mouseX && mouseX <= 400 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[3] == true) {
+        manager.mystery = 0;
+        _enter.no[3] = false;
+        ggg3 = 1;
+      }
+      //4をクリック
+      if (401 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 100 && mouseButton == RIGHT && _enter.no[4] == true) {
+        manager.mystery = 0;
+        _enter.no[4] = false;
+        hhh3 = 1;
+      }
+      //5をクリック
+      if (0 <= mouseX && mouseX <= 100 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[5] == true) {
+        manager.mystery = 0;
+        _enter.no[5] = false;
+        iii3 = 1;
+      }  
+      //6をクリック
+      if (101 <= mouseX && mouseX <= 200 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[6] == true) {
+        manager. mystery = 0;
+        _enter.no[6] = false;
+        jjj3 = 1;
+      }  
+      //7をクリック
+      if (201 <= mouseX && mouseX <= 300 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[7] == true) {
+        manager.mystery = 0;
+        _enter.no[7] = false;
+        kkk3 = 1;
+      }  
+      //8をクリック
+      if (301 <= mouseX && mouseX <= 400 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[8] == true) {
+        manager.mystery = 0;
+        _enter.no[8] = false;
+        lll3 = 1;
+      }  
+      //9をクリック
+      if (401 <= mouseX && mouseX <= 500 && 101 <= mouseY && mouseY <= 200 && mouseButton == RIGHT && _enter.no[9] == true) {
+        manager.mystery = 0;
+        _enter.no[9] = false;
+        mmm3 = 1;
+      }
+    }
+
+    //3回目の入力
+    //0を入力
+    if (_enter.no[0] == false && ddd3 == 1 ) {
+      ccc = 1;
+      if (ccc == 1) {
+        image(_image.no0, 225, 225);
+      }
+    }
+
+    //1を入力
+    if (_enter.no[1] == false  && eee3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no1, 225, 225);
+      }
+    } 
+    //入力した文字を表示！
+    //2を入力
+    if (_enter.no[2] == false  && fff3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no2, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //3を入力
+    if (_enter.no[3] == false && ggg3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no3, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //4を入力
+    if (_enter.no[4] == false  && hhh3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no4, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //5を入力
+    if (_enter.no[5] == false  && iii3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no5, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //6を入力
+    if (_enter.no[6] == false  && jjj3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no6, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //7を入力
+    if (_enter.no[7] == false  && kkk3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no7, 225, 225);
+      }
+    }  //入力した文字を表示！
+    //8を入力
+    if (_enter.no[8] == false  && lll3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no8, 225, 225);
+      }
+    }
+    //入力した文字を表示！
+    //9を入力
+    if (_enter.no[9] == false  && mmm3 == 1) {
+      ccc = 1;  
+      if (ccc == 1) {
+        image(_image.no9, 225, 225);
+      }
+    }
+
+    if (manager.mystery == 0) {
+      image(_image.MS, 0, 400);
+      text("間違えたみたいだ", 10, 440);
+    }
+
+    //問題に正解したら
+    if (manager.clear1 == true && manager.clear2 == true && manager.clear3 == true) {
+      image(_image.MS, 0, 400);
+      text("何か音がした気がする", 10, 440);
+      manager.correct = 1;
+    }
+    //resetボタンの当たり判定
+    if (300 <= mouseX && mouseX <= 360 && 350 <= mouseY && mouseY <= 365 && mouseButton == LEFT ) {
+
+      background(0);
+      image(_image.MS, 0, 400);
+      text("やりなおそう…", 10, 440);
+      manager.mystery = 3;
+      manager.clear1 = false;
+      manager.clear2 = false;
+      manager.clear3 = false;
+      _enter.no[0] = true;
+      _enter.no[1] = true;
+      _enter.no[2] = true;
+      _enter.no[3] = true;
+      _enter.no[4] = true;
+      _enter.no[5] = true;
+      _enter.no[6] = true;
+      _enter.no[7] = true;
+      _enter.no[8] = true;
+      _enter.no[9] = true;
+      aaa = 0;
+      bbb = 0;
+      ccc = 0;
+      ddd = 0;
+      eee = 0;
+      fff = 0;
+      ggg = 0;
+      hhh = 0;
+      iii = 0;
+      jjj = 0;
+      kkk = 0;
+      lll = 0;
+      mmm = 0;
+
+      ddd2 = 0;
+      eee2 = 0;
+      fff2 = 0;
+      ggg2 = 0;
+      hhh2 = 0;
+      iii2 = 0;
+      jjj2 = 0;
+      kkk2 = 0;
+      lll2 = 0;
+      mmm2 = 0;
+
+      ddd3 = 0;
+      eee3 = 0;
+      fff3 = 0;
+      ggg3 = 0;
+      hhh3 = 0;
+      iii3 = 0;
+      jjj3 = 0;
+      kkk3 = 0;
+      lll3 = 0;
+      mmm3 = 0;
+
+      //rect(0,201,500,200);
+    }
+
+    //backボタンの当たり判定
+    if (370 <= mouseX && mouseX <= 430 && 350 <= mouseY && mouseY <= 370 && mouseButton == LEFT ) {
+      room = 5;
+    }
+
+
+
+  
+  
+
+}
