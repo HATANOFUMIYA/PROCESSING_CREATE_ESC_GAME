@@ -1,0 +1,36 @@
+
+class item {
+  boolean esclv[];
+
+  item() {
+    esclv = new boolean[3];
+
+    esclv[0] = true;
+    esclv[1] = true;
+    esclv[2] = true;
+
+  }
+}
+
+item _item = new item();
+
+
+class enterimage {
+  //数字を入力していない状態(true)入力した状態(false)
+  boolean no[];
+
+  enterimage() {
+    no = new boolean[10];
+    no[0] = true;
+    no[1] = true;
+    no[2] = true;
+    no[3] = true;
+    no[4] = true;
+    no[5] = true;
+    no[6] = true;
+    no[7] = true;
+    no[8] = true;
+    no[9] = true;
+  }
+}
+enterimage _enter = new enterimage();
