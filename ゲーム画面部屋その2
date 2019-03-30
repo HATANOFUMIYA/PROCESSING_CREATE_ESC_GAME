@@ -1,0 +1,73 @@
+void Game_Heya2(){
+  
+
+    manager.Scene = 1;
+
+    //ソファー
+    rect(45, 240, 75, 70);
+
+
+    image(_image.heya1, 0, 0);
+
+    //部屋移動の画像の描画
+    image(_image.heya_1, 0, 0);
+    image(_image.heya_2, 450, 0);
+    image(_image.heya_3, 0, 450);
+    image(_image.heya_4, 450, 450);
+
+
+
+
+    //ソファーの当たり判定
+    if (45 <= mouseX && mouseX <= 120) {
+      if (240 <= mouseY && mouseY <= 290 && mouseButton == LEFT && _item.esclv[0] == true) {
+        image(_image.MS, 0, 400);
+        text("隙間にドライバーがあった！取りますか？右クリックで取ります", 10, 440);
+      }
+      if (mouseButton == RIGHT) {
+        _item.esclv[0] = false;
+        manager.num = 1;
+      }
+    }
+
+
+
+    if ( 45 <= mouseX  &&  mouseX <= 120 && 240 <= mouseY && mouseY <= 290 && mouseButton == RIGHT && _item.esclv[0] == false) {
+      image(_image.MS, 0, 400);
+      text("ドライバーをとった！もうなにもない", 10, 440);
+    }
+
+
+    //ドアとの当たり判定
+    if (370 <= mouseX && mouseX <= 460 && 180 <= mouseY && mouseY <= 310 && mouseButton == LEFT ) {
+      image(_image.MS, 0, 400);
+      text("開かない…なんでカギしまってんの？", 10, 440);
+      //if (manager.open ==  1) {
+        if(manager.open == 1){
+        room =11;
+      }
+    }
+    
+   
+
+    //見取り図との当たり判定
+    if (mouseButton == RIGHT) {
+      if (0 <= mouseX && mouseX <= 50 && 0 <= mouseY && mouseY <= 50) {
+        room = 2;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 50) {
+        room = 3;
+      }
+      if (0 <= mouseX && mouseX <= 50 && 450 <= mouseY && mouseY <= 500) {
+        room = 4;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 450 <= mouseY && mouseY <= 500) {
+        room = 5;
+      }
+    }
+
+    //持ち物画面へ
+    if (key == 'm') {
+      room = 10;
+    }
+}
