@@ -1,0 +1,89 @@
+void Game_Heya1(){
+  manager.Scene = 0;
+
+    fill(255, 255, 255);
+    //時計とネコと机のある部屋
+
+
+    image(_image.heya, 0, 0);
+    image(_image.cat, 125, 295);
+
+    image(_image.Tans_Key, 120, 370);
+
+    //部屋移動の画像の描画
+    image(_image.heya_1, 0, 0);
+    image(_image.heya_2, 450, 0);
+    image(_image.heya_3, 0, 450);
+    image(_image.heya_4, 450, 450);
+
+    //clock
+    //rect(390,10,80,90);
+    //X軸との当たり判定
+    if (390 <= mouseX && mouseX <= 470) {
+      //Y軸との当たり判定
+      if (10 <= mouseY && mouseY <= 100 && mouseButton == LEFT) {
+        image(_image.MS, 0, 400);
+        text("８時か…あと３０分で始まってしまう…", 10, 440);
+      }
+    }
+
+
+    //机との当たり判定
+    //X軸の当たり判定
+    if (100 <= mouseX  &&  mouseX <= 150 && manager.item_get == false) {
+      //Y軸の当たり判定
+      if (350 <= mouseY && mouseY <= 390 ) {
+        if (mouseButton == LEFT) {
+          image(_image.MS, 0, 400);
+          text("机の下に何かある…", 10, 440);
+          text("タンスのカギを取りますか？  右クリックで取る。", 10, 450);
+        }
+        if (mouseButton == RIGHT) {
+          manager.item_get = true;
+        }
+      }
+    }
+
+    if (manager.item_get == true) {  
+      image(_image.Tans_No_Key, 110, 370);
+    }
+
+
+
+    //机の下のアイテムを手に入れている状態で机の下をクリックしたときの処理
+    if ( 100 <= mouseX  &&  mouseX <= 150 && 350 <= mouseY && mouseY <= 390 && mouseButton == RIGHT && manager.item_get == true) {
+      image(_image.MS, 0, 400);
+      text("もう何もない", 10, 440);
+    }
+    //ネコの置物の当たり判定
+    //X軸の当たり判定
+    if (125 <= mouseX && mouseX <= 145 && mouseButton == LEFT) {
+      if (295 <= mouseY && mouseY <= 325) {
+        image(_image.MS, 0, 400);
+        text("お気に入りのネコの置物だ♪", 10, 440);
+        text("入学式に買ってもらったんだっけ", 10, 450);
+      }
+    }
+
+    //見取り図との当たり判定
+    if (mouseButton == RIGHT) {
+      if (0 <= mouseX && mouseX <= 50 && 0 <= mouseY && mouseY <= 50) {
+        room = 2;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 0 <= mouseY && mouseY <= 50) {
+        room = 3;
+      }
+      if (0 <= mouseX && mouseX <= 50 && 450 <= mouseY && mouseY <= 500) {
+        room = 4;
+      }
+      if (450 <= mouseX && mouseX <= 500 && 450 <= mouseY && mouseY <= 500) {
+        room = 5;
+      }
+    }
+
+    //持ち物画面
+    if (key == 'm') {
+      room = 10;
+    }
+
+}
