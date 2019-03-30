@@ -1,0 +1,53 @@
+void Game_Happy_Ending() {
+
+  //end
+  background(0, 50, 100);
+
+  if (keyPressed) {
+    if (key == 't') {
+      room= 0;
+    }
+  }
+  End.play();
+
+
+  image(_image.pile, 300, manager.MS9);
+  image(_image.cat, 250, manager.MS4);
+
+  fill(255);
+  text("ようやく出られた", 10, manager.MS1);
+  text("なぜ出られなくなったのか、", 10, manager.MS2);
+  text("疑問に思う部分は多く、まだ混乱しているが安心した♪", 10, manager.MS3);
+  text("さぁここからは至福の時だ！アニメを見るぞ！", 10, manager.MS4);
+  text("あれ、なんで電気つかないの？まさか停電！？", 10, manager.MS5);
+  text("なんでやねーーーん(´;ω;｀)", 10, manager.MS6);
+  text("Thank you for playing!", 10, manager.MS7);
+  text("制作者　フミフミ", 10, manager.MS8);
+  text("制作日数[2か月強]もう少し早くやりたかったorz", 10, manager.MS9);
+  text("登場人物紹介", 10, manager.MS10);
+  text("大神田　健一　", 10, manager.MS11);
+  text("無名レスラー", 10, manager.MS12);
+  text(" ???さん「ずるはいけません♪」", 10, manager.MS13);
+  text("制作者からのコメント", 10, manager.MS14);
+  fill(random(255), random(255), random(255));
+  text("プレイしてくれて本当にありがとう！時間かけすぎたので", 10, manager.MS15);
+  text("今後は目標を立ててやっていこうと思います！終わりです！", 10, manager.MS16);
+
+
+  manager.MS1 -= 0.2;
+  manager.MS2 -= 0.2;
+  manager.MS3 -= 0.2;
+  manager.MS4 -= 0.2;
+  manager.MS5 -= 0.2;
+  manager.MS6 -= 0.2;
+  manager.MS7 -= 0.2;
+  manager.MS8 -= 0.2;
+  manager.MS9 -= 0.2;
+  manager.MS10 -= 0.2;
+  manager.MS11 -= 0.2;
+  manager.MS12 -= 0.2;
+  manager.MS13 -= 0.2;
+  manager.MS14 -= 0.2;
+  manager.MS15 -= 0.2;
+  manager.MS16 -= 0.2;
+}
